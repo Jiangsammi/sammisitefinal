@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>NYC SPOTS</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/barebones.css">
+  <link rel="stylesheet" href="css/core-1.css">
+  <link rel="stylesheet" href="css/nycspots.css">
+  <link rel="stylesheet" href="css/manhattan.css">
+  <link rel="stylesheet" href="css/NanasGreenTea.css">
+
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<html>
+  <body>
+
+    <!-- Cute Arrow -->
+<div id="cute-arrow"></div>
+<script>
+  // Select the arrow element
+  const arrow = document.getElementById('cute-arrow');
+
+  // Track the mouse movement
+  document.addEventListener('mousemove', function(e) {
+    // Get the mouse position relative to the document
+    const mouseX = e.clientX;
+    const mouseY = e.clientY;
+
+    // Set the arrow position to the mouse position
+    arrow.style.left = mouseX - (arrow.offsetWidth / 2) + 'px'; // Center the arrow on the cursor
+    arrow.style.top = mouseY - (arrow.offsetHeight / 2) + 'px'; // Center the arrow on the cursor
+  });
+</script>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nana’s Green Tea</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+      
+ <div class="button-container">
+  <a href="budget.html" class="budget-button">Budget</a>
+<div class="home-contanier">
+  <a href="manhattan.html" class="home-button">Back</a>
+</div>
+</div>
+
+        <div class="header-container">
+            <h1>Nana’s Green Tea</h1>
+            <p class="tagline">We aim to make an impression on people, leave them smiling and bring them happiness with our food and hospitality.</p>
+        </div>
+        
+    </header>
+
+    <section class="menu">
+      <div class="menu-container">
+        <h2>What I Got</h2>
+      </div>
+    </section>
+
+      <!-- Dish 1 -->
+      <div class="dish">
+        <img src="images/Matchamochi.jpg" alt="Matcha Mochi Parfait" class="dish-image">
+        <div class="dish-info">
+          <h3 class="dish-name">🤍 Matcha Mochi Parfait</h3>
+          <p class="description">Matcha pudding, ice cream, red bean paste and, mochi.</p>
+          <p class="description">Plate: $12.45 </p>
+           <p class="description">(Enough to share with 2 people)</p>
+          <p class="price">Price: $</p>
+        </div>
+      </div>
+    
+      <!-- Dish 2 -->
+      <div class="dish">
+        <img src="images/Hojicha.jpg" alt="Hojicha Mochi Parfait" class="dish-image">
+        <div class="dish-info">
+          <h3 class="dish-name">🤍 Hojicha Mochi Parfait</h3>
+          <p class="description">Roasted green tea jelly, ice cream, bean paste and, mochi.</p>
+          <p class="description">Plate: $12.45 </p>
+           <p class="description">(Enough to share with 2 people)</p>
+          <p class="price">Price: $</p>
+        </div>
+      </div>
+
+
+
+<!-- Write Your Own Review Section -->
+<div class="review-section">
+  <h3 class="review-title">🤍 Share Your Thoughts! 🤍</h3>
+  <form id="review-form" class="review-form">
+    <label for="name"> Your Name:</label>
+    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+    <label for="rating">⭐ Rating:</label>
+    <select id="rating" name="rating" required>
+      <option value="1">1 Star 😞</option>
+      <option value="2">2 Stars 😕</option>
+      <option value="3">3 Stars 😐</option>
+      <option value="4">4 Stars 🙂</option>
+      <option value="5">5 Stars 😍</option>
+    </select>
+
+    <label for="review">📝 Your Review:</label>
+    <textarea id="review" name="review" rows="4" placeholder="Write your review here..." required></textarea>
+
+    <button type="submit" class="submit-review">💌 Submit Review</button>
+  </form>
+  
+<!-- Add a View Responses Button -->
+<button id="view-responses" type="button">👀 View Responses</button>
+<div id="saved-reviews" style="display: none;">
+    <!-- Responses will go here -->
+    <p>Response 1: This is a saved review!</p>
+    <p>Response 2: Another saved review.</p>
+</div>
+
+<script>
+  // Get the button and saved-reviews div
+  const viewResponsesButton = document.getElementById('view-responses');
+  const savedReviewsDiv = document.getElementById('saved-reviews');
+    
+  // Add click event listener to the button
+  viewResponsesButton.addEventListener('click', () => {
+    // Toggle visibility of saved-reviews div
+    if (savedReviewsDiv.style.display === 'none') {
+        savedReviewsDiv.style.display = 'block';
+        viewResponsesButton.innerHTML = '🙈 Hide Responses'; // Change button text
+    } else {
+        savedReviewsDiv.style.display = 'none';
+        viewResponsesButton.innerHTML = '👀 View Responses'; // Change button text
+    }
+  });
+</script>
+
+<script>
+  // Load saved reviews from local storage when the page loads
+  window.onload = function() {
+    loadReviews();
+  }
+
+  // Handle form submission
+  document.getElementById("review-form").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent the default form submission
+    
+    const name = document.getElementById("name").value;
+    const rating = document.getElementById("rating").value;
+    const review = document.getElementById("review").value;
+
+    const newReview = {
+      name: name,
+      rating: rating,
+      review: review,
+      date: new Date().toLocaleString()
+    };
+
+    // Use a unique key for the current page or section (e.g., "location-reviews")
+    const pageKey = "location-reviews";  // Change this key to reflect the current page/section
+    let reviews = JSON.parse(localStorage.getItem(pageKey)) || [];
+    reviews.push(newReview);
+    localStorage.setItem(pageKey, JSON.stringify(reviews));
+
+    // Clear the form and display a message
+    document.getElementById("review-form").reset();
+    loadReviews(); // Refresh the displayed reviews
+  });
+
+  // Load reviews from local storage
+  function loadReviews() {
+    const reviewsContainer = document.getElementById("saved-reviews");
+    const pageKey = "location-reviews"; // Same key used during saving
+    const reviews = JSON.parse(localStorage.getItem(pageKey)) || [];
+    
+    reviewsContainer.innerHTML = ""; // Clear existing reviews
+    if (reviews.length > 0) {
+      reviews.forEach(review => {
+        const reviewElement = document.createElement("div");
+        reviewElement.classList.add("review-item");
+        reviewElement.innerHTML = `
+          <strong>${review.name} (${review.rating}⭐)</strong>
+          <p>${review.review}</p>
+          <small>Submitted on: ${review.date}</small>
+          <hr>
+        `;
+        reviewsContainer.appendChild(reviewElement);
+      });
+    } else {
+      reviewsContainer.innerHTML = "<p>No reviews yet!</p>";
+    }
+  }
+</script>
+
+<section class="location-hours">
+  <div class="location-container">
+      <h2>🌸 Location & Hours 🌸</h2>
+      <p><strong>📍 Location:</strong> 
+        <a href="https://www.google.com/maps?sca_esv=35f5bc0541822856&biw=1280&bih=585&output=search&q=nana%E2%80%99s+green+tea&source=lnms&fbs=AEQNm0BRbrA8b3J1Cq1UM3gcLH4CZfo0DJmjE1astM2EagB2GIIpdZb0I6xzAG2mqqevur_dwf_HO07EzikwlQLVyvmPbjaarar88XTcJ_8DqQUWAj8XldoqgiYYC5YxgWImPt2HqgI2cCLtpMZT6sbGR8fHX2ufJcV56v4NaRcs10vhvor75KdKN8PdyZPNLvlujcfncZa4s5LFOt_FGy06iQvfKcBxSA&entry=mc&ved=1t:200715&ictx=111" target="_blank" class="map-link">
+          1250 Broadway, New York, NY 10001  </a>
+          </p>
+          <p><strong>🕒 Hours:</strong></p>
+          <p>Mon - Thu: 11:00 AM - 10:00 PM</p>
+          <p>Fri - Sut: 11:00 AM - 11:00 PM</p>
+      </div>
+  </section>
+  
+ 
+ <footer>
+  <div class="footer-container">
+      <p class="highlight-text">
+        For more info click here -> <a href="https://www.nanasgreenteaus.com/menu" target="_blank" class="footer-link">Nana’s Green Tea</a>
+      </p>
+  </div>
+</footer>
+  
+</body>
+</html>

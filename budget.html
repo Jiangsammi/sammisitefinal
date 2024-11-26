@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+
+<div class="button-container">
+  <a href="index.html" class="home-button">Home</a>
+</div>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>NYC SPOTS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/barebones.css">
+  <link rel="stylesheet" href="css/core-1.css">
+  <link rel="stylesheet" href="css/nycspots.css">
+  <link rel="stylesheet" href="css/budget.css">
+
+  <!-- Inline CSS for centering text -->
+  <style>
+    .center {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Cute Arrow (optional) -->
+  <div id="cute-arrow"></div>
+
+  <main>
+    <section class="center">
+      <h1 class="cute-font-regular">NYC Spots</h1>
+      <h2 class="indie-flower-regular">Made By Sammi Jiang</h2>
+
+      <div class="center">
+        <h2 class="svelte-1mv8t38">Hi, this is the budget page</h2>
+        <p class="svelte-1mv8t38">Here is where you can edit your budget!</p>
+      </div>
+
+      <div class="total-calculator">
+        <label for="budget">Total Budget:</label>
+        <input type="number" id="budget" placeholder="Enter your budget" aria-label="Total Budget">
+
+        <label for="tipPercentage">Tip Percentage:</label>
+        <input type="number" id="tipPercentage" placeholder="Enter tip percentage" aria-label="Tip Percentage">
+
+        <h4 id="totalSpentResult"></h4>
+        
+        <button onclick="calculateTotalSpent()">Calculate Total Spent</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- JavaScript Section -->
+  <script>
+    // Tracking mouse movement (Cute arrow functionality)
+    const arrow = document.getElementById('cute-arrow');
+    document.addEventListener('mousemove', function(e) {
+      const mouseX = e.clientX;
+      const mouseY = e.clientY;
+      arrow.style.left = mouseX - (arrow.offsetWidth / 2) + 'px';
+      arrow.style.top = mouseY - (arrow.offsetHeight / 2) + 'px';
+    });
+
+    // Store the budget in localStorage
+    window.onload = function() {
+      const savedBudget = localStorage.getItem('budget');
+      if (savedBudget) {
+        document.getElementById('budget').value = savedBudget;
+      }
+      
+      // Retrieve and display the stored totalSpent value
+      const totalSpent = localStorage.getItem('totalSpent');
+      const totalSpentResultElement = document.getElementById('totalSpentResult');
+      if (totalSpent) {
+        totalSpentResultElement.textContent = `Total amount spent (Budget + Tip) $${totalSpent}`;
+      } else {
+        totalSpentResultElement.textContent = 'No total spent information found.';
+      }
+    }
+
+    // Function to calculate total spent
+function calculateTotalSpent() {
+  const budget = parseFloat(document.getElementById('budget').value);
+  const tipPercentage = parseFloat(document.getElementById('tipPercentage').value);
+  const totalSpentResultElement = document.getElementById('totalSpentResult');
+
+  if (isNaN(budget) || isNaN(tipPercentage)) {
+    totalSpentResultElement.textContent = 'Oops! 😅 Please enter valid numbers for both budget and tip percentage!';
+    return;
+  }
+
+  const tipAmount = (tipPercentage / 100) * budget;
+  const totalSpent = budget + tipAmount;
+
+  totalSpentResultElement.textContent = `Budget + Tip = $${totalSpent.toFixed(2)} `;
+
+  // Store the totalSpent value in localStorage
+  localStorage.setItem('totalSpent', totalSpent.toFixed(2));
+}
+
+  </script>
+</body>
+</html>

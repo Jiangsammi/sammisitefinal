@@ -1,0 +1,341 @@
+/* General body styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f9f9f9; /* Soft background */
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+a {
+  color: #ff6d9e;
+  text-decoration: none;
+}
+
+h1, h2, h3 {
+  font-family: 'Comic Sans MS', cursive, sans-serif; /* Fun and bold font family */
+}
+
+/* Header Styles */
+header {
+  background-color: #ffccd5; /* Light pink */
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header-container h1 {
+  font-size: 3em;
+  margin: 0;
+  color: #d11c5b; /* Darker pink for title */
+}
+
+.tagline {
+  font-size: 1.2em;
+  font-style: italic;
+  margin-top: 20px;
+}
+
+/* Menu Section Styles */
+.menu {
+  padding: 40px 20px;
+  background-color: #f9f9f9; /* Light background */
+  text-align: center;
+}
+
+.menu-title {
+  font-size: 2.5em;
+  color: #333;
+  margin-bottom: 30px;
+  font-weight: 600;
+  text-transform: uppercase; /* Capitalize to make it stand out */
+}
+
+/* Menu Section */
+.menu-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px; /* Space between each dish */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Styling the links */
+.map-link {
+  color: #ff66b2; /* Cute pink link */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.map-link:hover {
+  color: #ff3385; /* Darker pink when hovered */
+  text-decoration: underline;
+}
+
+/* Dish Cards Styling */
+.dish {
+  background-color: #f0d7db; /* Light peachy pink */
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 280px;
+  text-align: left;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 30px; /* Adding margin at the bottom to separate each dish */
+}
+
+.dish:hover {
+  transform: translateY(-10px); /* Hover effect */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* More prominent shadow */
+}
+
+.dish-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover; /* Ensures image fills the space */
+  border-radius: 8px;
+  margin-bottom: 15px; /* Space between image and text */
+}
+
+.dish-info {
+  padding: 10px 0;
+}
+
+.dish-name {
+  font-size: 1.6em;
+  color: #e86d7e; /* Soft pinkish-red */
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-transform: capitalize; /* Capitalize each word for readability */
+}
+
+.description {
+  font-size: 1.1em;
+  color: #5b5a5a; /* Light grey for description */
+  margin-bottom: 10px;
+}
+
+.price {
+  font-size: 1.2em;
+  color: #2a9d8f; /* Teal color for the price */
+  font-weight: bold;
+}
+
+/* Space between dish items */
+.menu-container .dish + .dish {
+  margin-top: 30px;
+}
+
+/* Styling the location-hours section */
+.location-hours {
+  background-color: #ffe6f1; /* Soft pink background */
+  border-radius: 15px; /* Rounded corners */
+  padding: 30px;
+  margin: 20px auto;
+  width: 80%;
+  max-width: 800px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for the location-container */
+.location-container h2 {
+  text-align: center;
+  color: #ff66b2; /* Pretty pink color */
+  font-size: 1.8rem;
+}
+
+.location-container p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 10px 0;
+}
+
+/* Center the content of .location-hours */
+.location-hours {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 30vh;  /* Ensures the section takes up at least the full height of the viewport */
+}
+
+/* Ensure the container is also centered within the section */
+.location-container {
+  text-align: center;
+}
+
+/* Footer Section */
+footer {
+  background-color: #ffccd5; /* Light pink footer */
+  padding: 20px;
+  text-align: center;
+  font-size: 1.1em;
+  color: #ff3366;
+  border-top: 3px solid #ff4d94;
+}
+
+/* Footer Styling */
+footer {
+  background-color: #ff3385; /* Pink footer */
+  color: white;
+  padding: 20px;
+  text-align: center;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+footer a {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Optional: Add some cute icons */
+footer p {
+  font-size: 1.2rem;
+}
+
+
+/* Footer Styling */
+footer {
+  background-color: #ffccd5; /* Pink footer background */
+  color: white;
+  padding: 30px;
+  text-align: center;
+  border-top-left-radius: 25px;  /* Softer rounded corners */
+  border-top-right-radius: 25px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for a soft lift */
+  font-size: 1.2rem;
+}
+
+/* Style for the footer text */
+footer p {
+  margin: 0;
+  font-size: 1.3rem; /* Slightly larger text */
+  font-weight: bold;
+  line-height: 1.6;
+  letter-spacing: 0.5px;
+}
+
+/* Style for the link in footer */
+footer a {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  background-color: #ff3385; /* Slightly darker pink button effect */
+  padding: 8px 15px;
+  border-radius: 20px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Hover effect for the link */
+footer a:hover {
+  background-color: #ff66b2; /* Lighter pink when hovered */
+  color: white;
+  text-decoration: underline;
+  transform: scale(1.05); /* Slightly larger when hovered */
+}
+
+/* Additional cute touches */
+footer a:focus {
+  outline: none;
+  box-shadow: 0 0 5px 3px rgba(255, 102, 178, 0.5); /* Cute glow effect when focused */
+}
+
+footer p a {
+  text-decoration: underline; /* Makes the link underlined to emphasize */
+}
+
+footer p {
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.highlight-text {
+  font-size: 20px; /* Larger font size */
+  font-weight: bold; /* Bold text for emphasis */
+  color: #333; /* Dark color for high contrast */
+  text-align: center; /* Centered text */
+}
+
+.footer-link {
+  color: #f9dce1; /* Light pink color for the link */
+  text-decoration: underline; /* Underline the link */
+  font-weight: bold; /* Make the link text bold */
+}
+
+
+/* Center the review section */
+.review-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; /* Full viewport height */
+  background-color: #ffe6f1; /* Light pink background */
+  padding: 20px;
+}
+
+/* Styling the form and labels */
+.review-form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 100%;
+}
+
+#reviews-title {
+  color: #3d9e3d; /* Darker pink shade */
+  font-size: 24px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+
+.review-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #ff66b2; /* Pink color for labels */
+}
+
+.review-form input,
+.review-form select,
+.review-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border: 1px solid #ff66b2; /* Pink border */
+  border-radius: 4px;
+}
+
+.review-form button {
+  width: 100%;
+  padding: 12px;
+  background-color: #ff66b2; /* Pink button */
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.review-form button:hover {
+  background-color: #ff3385; /* Darker pink on hover */
+}
+
+.review-form textarea {
+  resize: vertical;
+}
+
+
+/* Define a class for the darker pink color */
+.darker-pink {
+  color: #d5006b; /* This is a darker shade of pink */
+}

@@ -1,0 +1,111 @@
+/* Move here1 and here2 down with a larger gap */
+.nyc-grid div:nth-child(1), /* here1 */
+.nyc-grid div:nth-child(2) { /* here2 */
+  margin-top: 40px; /* Adjust the gap as needed */
+}
+
+/* Grid layout for 4 items (now in two rows, two columns) */
+.nyc-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns layout */
+  gap: 10px; /* Adjusted gap between items */
+  text-align: center;
+  width: 100%;
+}
+
+
+/* Make sure all images are the same size */
+.nyc-grid img {
+  width: 100%;        /* Ensure the image fills its container width */
+  height: auto;       /* Maintain the aspect ratio */
+  max-width: 100%;    /* Make sure the image doesn’t exceed its container width */
+  max-height: 200px;  /* Set a maximum height for all images */
+  object-fit: cover;  /* Ensure images fill the space without distortion */
+}
+
+
+/* Make all images the same size and round them into circles */
+.nyc-grid img {
+  width: 150px;        /* Set a fixed width for all images */
+  height: 150px;       /* Set the height to match the width */
+  border-radius: 50%;  /* Make the images circular */
+  object-fit: cover;   /* Ensure images fill the circle without distortion */
+  border: 3px solid #FF69B4;  /* Optional: Add a border around the image */
+}
+
+/* Optional: Center the text beneath the image */
+.nyc-grid div {
+  text-align: center;
+}
+
+
+
+
+
+/* Global styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #fff1f8;
+  color: #ff6d9e;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #ff6d9e;
+  text-decoration: none;
+}
+
+h1, h2, h3 {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+header {
+  background-color: #ffccd5;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header-container h1 {
+  font-size: 3em;
+  margin: 0;
+  color: #d11c5b; /* Darker pink for the title */
+}
+
+.tagline {
+  font-size: 1.2em;
+  font-style: italic;
+  margin-top: 20px;  /* Added space to move tagline down */
+}
+
+.menu {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.menu-container h2 {
+  font-size: 2.5em;
+  margin-bottom: 30px;
+  color: #ff6d9e; /* Lighter shade of pink for the 'What We Got' title */
+}
+
+.dish {
+  background-color: #e1cbd1;
+  padding: 20px;
+  margin: 10px auto;
+  border-radius: 8px;
+  max-width: 500px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dish h3 {
+  font-size: 2em;
+  margin: 0;
+  color: #e86d7e;
+}
+
+.description {
+  font-size: 1.1em;
+  margin-top: 10px;
+}

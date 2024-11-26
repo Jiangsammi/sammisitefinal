@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <!-- Basic Page Needs -->
+  <meta charset="utf-8">
+  <title>Food Recommendations</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/barebones.css">
+  <link rel="stylesheet" href="css/core-1.css">
+  <link rel="stylesheet" href="css/nycspots.css">
+  <link rel="stylesheet" href="css/foodrec.css">
+  <!-- Link to the external styles.css -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <style>
+    /* Make the rating emojis larger */
+    #rating span {
+      font-size: 40px; /* Increase the size of the emojis */
+      cursor: pointer;
+      margin: 0 5px;
+    }
+
+    /* Add a highlight effect for selected emoji */
+    #rating span:hover {
+      border: 2px solid black;
+    }
+
+    #rating span.selected {
+      border: 2px solid black; /* Highlight selected emoji */
+    }
+  </style>
+
+</head>
+
+<body>
+  <div id="cute-arrow"></div>
+  <script>
+    // Select the arrow element
+    const arrow = document.getElementById('cute-arrow');
+
+    // Track the mouse movement
+    document.addEventListener('mousemove', function(e) {
+      // Get the mouse position relative to the document
+      const mouseX = e.clientX;
+      const mouseY = e.clientY;
+
+      // Set the arrow position to the mouse position
+      arrow.style.left = mouseX - (arrow.offsetWidth / 2) + 'px'; // Center the arrow on the cursor
+      arrow.style.top = mouseY - (arrow.offsetHeight / 2) + 'px'; // Center the arrow on the cursor
+    });
+  </script>
+
+  <header>
+    <div class="button-container">
+      <a href="budget.html" class="budget-button">Budget</a>
+      <div class="home-contanier">
+        <a href="index.html" class="home-button">Home</a>
+      </div>
+    </div>
+
+    <div class="container">
+      <h1>Food Recommendations</h1>
+
+      <form id="recommendationForm" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="restaurantName">Restaurant Name:</label>
+          <input type="text" id="restaurantName" name="restaurantName" required>
+        </div>
+
+        <!-- Rating Section with Larger Emojis -->
+        <div class="form-group">
+          <label for="rating">⭐ Rating:</label>
+          <div id="rating" class="rating">
+            <span>😞</span>
+            <span>😐</span>
+            <span>🙂</span>
+            <span>😊</span>
+            <span>😍</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="review">Review:</label>
+          <textarea id="review" name="review" placeholder="Write your review here..." required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="imageUpload">Upload Picture:</label>
+          <input type="file" id="imageUpload" name="image" accept="image/*">
+        </div>
+
+        <button type="submit">Submit Recommendation</button>
+      </form>
+
+      <!-- Container for displaying the recommendations -->
+      <div id="recommendationContainer"></div>
+
+      <script>
+        // Track selected rating emoji
+        let selectedRating = "😞";
+
+        // Event listener for selecting a rating emoji
+        document.querySelectorAll("#rating span").forEach(span => {
+          span.addEventListener("click", () => {
+            selectedRating = span.textContent;
+            document.querySelectorAll("#rating span").forEach(s => s.classList.remove("selected"));
+            span.classList.add("selected"); // Highlight selected emoji
+          });
+        });
+
+        document.getElementById('recommendationForm').addEventListener('submit', function(event) {
+          event.preventDefault();
+
+          const restaurantName = document.getElementById('restaurantName').value;
+          const rating = selectedRating;  // Use the selected rating emoji
+          const review = document.getElementById('review').value;
+          const imageUpload = document.getElementById('imageUpload').files[0];
+
+          // Get the current date when the recommendation is submitted
+          const date = new Date().toLocaleString(); // Format as "MM/DD/YYYY, HH:MM AM/PM"
+
+          // Create a new recommendation object
+          const recommendation = {
+            restaurantName,
+            rating,
+            review,
+            date,
+            image: imageUpload ? URL.createObjectURL(imageUpload) : null
+          };
+
+          // Store recommendation in local storage (for simplicity)
+          const recommendations = JSON.parse(localStorage.getItem('recommendations')) || [];
+          recommendations.push(recommendation);
+          localStorage.setItem('recommendations', JSON.stringify(recommendations));
+
+          // Clear form inputs
+          document.getElementById('recommendationForm').reset();
+
+          // Display the new recommendation
+          displayRecommendations();
+        });
+
+        // Function to display all recommendations
+        function displayRecommendations() {
+          const recommendationsContainer = document.getElementById('recommendationContainer');
+          const recommendations = JSON.parse(localStorage.getItem('recommendations')) || [];
+
+          recommendationsContainer.innerHTML = ''; // Clear the container
+
+          recommendations.forEach(recommendation => {
+            const recommendationDiv = document.createElement('div');
+            recommendationDiv.classList.add('recommendation');
+
+            // Add restaurant details
+            recommendationDiv.innerHTML = `
+              <h3>${recommendation.restaurantName}</h3>
+              <p><strong>Rating:</strong> ${recommendation.rating}</p>
+              <p><strong>Review:</strong> ${recommendation.review}</p>
+              <p><strong>Submitted on:</strong> ${recommendation.date}</p>
+            `;
+
+            // Add image if available
+            if (recommendation.image) {
+              const imgElement = document.createElement('img');
+              imgElement.src = recommendation.image;
+              recommendationDiv.appendChild(imgElement);
+            }
+
+            recommendationsContainer.appendChild(recommendationDiv);
+          });
+        }
+
+        // Initial display of recommendations when the page loads
+        document.addEventListener('DOMContentLoaded', displayRecommendations);
+      </script>
+    </div>
+
+  </header>
+</body>
+
+</html>

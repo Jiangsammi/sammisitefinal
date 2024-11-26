@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Basic Page Needs -->
+  <meta charset="utf-8">
+  <title>NYC SPOTS</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/barebones.css">
+  <link rel="stylesheet" href="css/core-1.css">
+  <link rel="stylesheet" href="css/nycspots.css">
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/favicon.ico">
+
+</head>
+<body>
+  <!-- Cute Arrow -->
+  <div id="cute-arrow"></div>
+  <script>
+    // Select the arrow element
+    const arrow = document.getElementById('cute-arrow');
+
+    // Track the mouse movement
+    document.addEventListener('mousemove', function(e) {
+      // Get the mouse position relative to the document
+      const mouseX = e.clientX;
+      const mouseY = e.clientY;
+
+      // Set the arrow position to the mouse position
+      arrow.style.left = mouseX - (arrow.offsetWidth / 2) + 'px'; // Center the arrow on the cursor
+      arrow.style.top = mouseY - (arrow.offsetHeight / 2) + 'px'; // Center the arrow on the cursor
+    });
+  </script>
+  
+  <header>
+    <div class="button-container">
+      <a href="budget.html" class="budget-button">Budget</a>
+      <a href="aboutme.html" class="home-button">About Me</a>
+    </div>
+
+    <div class="header-container">
+      <h1>NYC Spots</h1>
+      <h2 class="indie-flower-regular">Made By Sammi Jiang</h2>
+    </div>
+    
+  
+    <script>
+      // Retrieve the stored totalSpent value from localStorage on page load
+      window.onload = function() {
+        const totalSpent = localStorage.getItem('totalSpent');
+        const totalSpentResultElement = document.getElementById('totalSpentResult');
+
+        if (totalSpent) {
+          // Display the total spent value if available
+          totalSpentResultElement.textContent = totalSpent;
+        } else {
+          // If there's no stored value, show a default message
+          totalSpentResultElement.textContent = '0.00';
+        }
+      }
+    </script>
+
+    <p class="svelte-1mv8t38">Here is where you can find food & dessert spots in NYC!</p>
+    <h2 class="svelte-1mv8t38">
+      <div class="total-spent-display">
+        Budget: $<span id="totalSpentResult">0.00</span>
+      </div>
+    </h2>
+    <p class="svelte-1mv8t38">Click the location you want to explore!</p>
+  </header>
+
+  <section class="nyc-grid">
+    <div>
+      <img src="images/Queens.jpeg" />
+      <p><a href="queens.html">Queens</a></p>
+    </div>
+
+    <div>
+      <img src="images/Manhattan.jpeg" />
+      <p><a href="manhattan.html">Manhattan</a></p>
+    </div>
+  </section>
+
+  <!-- Add the Pink Recommendation Button Here -->
+  <div class="recommendation-button-container" style="text-align: center; margin-top: 20px;">
+    <a href="foodrec.html">
+      <div class="center">
+        <h2 class="svelte-1mv8t38">Have Some Recommendation?</h2>
+      </div>  
+      <button class="recommendation-button" style="padding: 10px 20px; font-size: 16px; background-color: #FF69B4; color: white; border: none; border-radius: 5px; cursor: pointer;">
+click Here!       </button>
+    </a>
+  </div>
+
+</body>
+</html>

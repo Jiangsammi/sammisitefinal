@@ -1,0 +1,139 @@
+/* General body styling */
+body {
+    font-family: 'Raleway', sans-serif;
+    line-height: 1.8; /* Increased line height for better readability */
+    background-color: #fce7f3; /* Soft pastel pink */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  
+  /* Header styling */
+header {
+    background-color: #e4a3c4; /* Soft pink background */
+    color: white; /* White text for high contrast */
+    padding: 40px 0; /* Larger padding for spacing */
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for better visibility */
+  }
+  
+  .header-container h1 {
+    font-size: 4rem; /* Larger font size for the main heading */
+    margin-bottom: 10px;
+    font-family: 'Indie Flower', cursive; /* Cute font for the title */
+    letter-spacing: 1px;
+    font-weight: bold;
+  }
+  
+  .header-container h2 {
+    font-size: 2rem; /* Slightly smaller size for the subtitle */
+    font-family: 'Raleway', sans-serif; /* Clean sans-serif font for the subtitle */
+    font-weight: normal;
+    margin-top: 0;
+    color: #fff; /* Keep the text white for contrast */
+  }
+  
+  
+  /* Button container styling */
+  .button-container {
+    margin-top: 30px;
+  }
+  
+  .button-container a {
+    background-color: #ff66b2; /* Vibrant pink button */
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 50px; /* Rounded button */
+    font-weight: bold;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    font-size: 1.1rem;
+  }
+  
+  .button-container a:hover {
+    background-color: #ff3385; /* Lighter pink hover */
+    box-shadow: 0 4px 8px rgba(255, 51, 133, 0.3); /* Cute shadow effect */
+  }
+  
+  /* About Me content container */
+  .aboutme-content {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 25px;
+    background-color: #fff;
+    border-radius: 25px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border: 3px solid #ff80bf; /* Soft pink border */
+    font-size: 1.2rem; /* Increased font size for easier reading */
+    color: #444; /* Darker text for contrast */
+  }
+  
+  /* Section headings */
+  h2, h3 {
+    color: #ff66b2; /* Soft pink headings */
+    font-family: 'Indie Flower', cursive;
+    font-size: 2.4rem;
+    margin-bottom: 15px;
+  }
+  
+  /* Paragraph styling */
+  p {
+    font-size: 1.1rem; /* Slightly larger text for readability */
+    line-height: 1.8; /* Increased line height for better readability */
+    margin-bottom: 20px;
+    font-family: 'Raleway', sans-serif;
+    color: #333; /* Darker text for contrast */
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Styling for each section */
+  section {
+    padding: 20px;
+    margin: 20px 0;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-size: 1.1rem; /* Increased font size for easier reading */
+    color: #555; /* Slightly darker text for better contrast */
+  }
+  
+  section h3 {
+    color: #ff3399; /* Slightly darker pink for subheadings */
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+  
+  section p {
+    font-size: 1.2rem; /* Increased font size */
+    color: #444; /* Darker text for better readability */
+  }
+  
+  /* Adding cute icons before sections */
+  section::before {
+    content: "🌸";
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  /* Cute Footer Style */
+  footer {
+    background-color: #ff80bf;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    border-top: 5px solid #ff66b2;
+    font-family: 'Indie Flower', cursive;
+  }
+  
+  footer p {
+    margin: 0;
+    font-size: 1.1rem;
+    line-height: 1.6; /* Increased line height for readability */
+  }
+  
