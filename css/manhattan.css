@@ -13,7 +13,6 @@
   width: 100%;
 }
 
-
 /* Make sure all images are the same size */
 .nyc-grid img {
   width: 100%;        /* Ensure the image fills its container width */
@@ -22,7 +21,6 @@
   max-height: 200px;  /* Set a maximum height for all images */
   object-fit: cover;  /* Ensure images fill the space without distortion */
 }
-
 
 /* Make all images the same size and round them into circles */
 .nyc-grid img {
@@ -37,10 +35,6 @@
 .nyc-grid div {
   text-align: center;
 }
-
-
-
-
 
 /* Global styles */
 body {
@@ -108,4 +102,37 @@ header {
 .description {
   font-size: 1.1em;
   margin-top: 10px;
+}
+
+.centered-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.centered-content img {
+  max-width: 160px;
+  border-radius: 50%;
+}
+
+.centered-content .text {
+  margin-top: 10px;
+  font-size: 1.2rem;
+}
+
+
+
+.box {
+  width: 250px;
+  height: 150px;
+  margin: 10px auto;
+  padding: 25px;
+  border: 5px solid rgb(229,146,190);
+  display: flex;
+  justify-content: center;  /* Centers horizontally */
+  align-items: center;      /* Centers vertically */
+  text-align: center;       /* Ensures text is centered */
 }
